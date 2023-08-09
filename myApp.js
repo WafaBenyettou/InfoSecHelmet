@@ -19,7 +19,8 @@ const PORT = process.env.PORT || 3000;
 
 
 
-app.use(helmet.hidePoweredBy())
+// Apply security-related headers using Helmet middleware
+app.use(helmet.hidePoweredBy());
 app.use(helmet.frameguard({ action: 'deny' }));
 
 
