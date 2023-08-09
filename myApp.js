@@ -1,11 +1,15 @@
 const express = require("express");
 const app = express();
 
-let helmet = require("helmet");
+const helmet = require("helmet");
 app.use(helmet.hidePoweredBy());
+
+// Apply helmet.frameguard() on each request with the configuration object
 app.use(helmet.frameguard({ action: "deny" }));
 
+// Exporting 'app' for potential use in other files
 module.exports = app;
+
 const api = require("./server.js");
 app.use(express.static("public"));
 app.disable("strict-transport-security");
