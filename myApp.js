@@ -6,6 +6,7 @@ app.use(helmet.hidePoweredBy());
 
 // Apply helmet.frameguard() on each request with the configuration object
 app.use(helmet.frameguard({ action: "deny" }));
+app.use(helmet.xssFilter());
 
 // Exporting 'app' for potential use in other files
 module.exports = app;
