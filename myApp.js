@@ -1,10 +1,9 @@
 const express = require('express');
-let helmet = require('helmet');
 const app = express();
 
 
 
-// Apply security-related headers using Helmet middleware
+let helmet = require('helmet');
 app.use(helmet.hidePoweredBy());
 app.use(helmet.frameguard({action: 'deny'}));
 
